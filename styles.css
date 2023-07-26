@@ -1,0 +1,55 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+    height: 100vh;
+}
+.InitialMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15vh;
+}
+.EnterGame{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid blue;
+    width: 150vh;
+    height: 90vh;
+    margin: 40px 20px 20px 20px;
+    justify-content: center;
+    align-items: center;
+}
+.WelcomingText{
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-self: center;
+    margin-top: 5vh;
+    margin-right: 5px;
+}
+.StartGameBox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width:  400px;
+    height: 400px;
+
+}
+.text{
+    display: flex;
+    justify-content: center;
+}
+.buttongame{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 17vh;
+}
