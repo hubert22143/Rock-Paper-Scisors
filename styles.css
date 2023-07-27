@@ -8,16 +8,18 @@ html,body{
 body{
     display: flex;
     justify-content: center;
-    background-color: gray;
+    background: #050505;
+    color: #fafafa;
     height: 100vh;
 }
 .InitialMenu{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 15vh;
 }
 .EnterGame{
+    background-color:#000000;
+    position: relative;
     display: flex;
     flex-direction: column;
     border: 2px solid blue;
@@ -28,28 +30,38 @@ body{
     align-items: center;
 }
 .WelcomingText{
+    width: 100vh
+    height: 15vh;
+    background-color: #886d71;
     position: absolute;
     top: 0;
     display: flex;
     align-self: center;
     margin-top: 5vh;
     margin-right: 5px;
+    text-align: center;
+    margin: 25px;
 }
 .StartGameBox{
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     width:  400px;
     height: 400px;
-
+    background-color: #1b1c22;
 }
-.text{
-    display: flex;
-    justify-content: center;
+#start-game{
+    background-color: #2534da;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    border-radius: 1vh;
+    padding: 20px;    
+    width: 20vh;
+    transition: background-color 0.3s;
 }
-.buttongame{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 17vh;
+#start-game:hover {
+    background-color: hsl(235, 71%, 50%);
+    opacity: 30%;
 }
