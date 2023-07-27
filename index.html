@@ -4,27 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors Game</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="EnterGame">
-    <div class="InitialMenu">
-    <div class="WelcomingText">
-    <h1>Welcome to Rock-Paper-Scissors game!</h1>
-    </div>
-    <div class="StartGameBox">
-        <div class="text">
-        <h2>Click below to enter the game!</h2>
-    </div>
-        <div class="buttongame">
-            <button id="start-game">Start Game</button>
+    <div class="Game">
+        <div class="InitialMenu">
+            <div class="WelcomingText">
+                <h1>Welcome to Rock-Paper-Scissors game!</h1>
+            </div>
+            <div class="StartGameBox">
+                <div class="text">
+                    <h2>Click below to enter the game!</h2>
+                </div>
+                <div class="buttongame">
+                    <button id="start-game">Start Game</button>
+                </div>
+            </div>
+        </div>
+        <div class="UserInterface" style="display: none;">
+            <div class="NavGameMenu">
+                <div class="NavGameText">
+                    <h3>Welcome user! Feel free to start the game whenever you would like to!</h3>
+                </div>  
+                <div class="NavGameButtons">
+                    <div class="PlayVsBot">
+                        <button id="Play">Play vs Bot</button>
+                    </div>
+                    <div class="Music">
+                        <button id="Music">Music</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
-<div class="UserInterface" visibility="hidden">
-    
-</div>
+    <script src="script.js"></script>
 </body>
 </html>

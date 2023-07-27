@@ -4,7 +4,7 @@ const InitialMenu = document.querySelector('.InitialMenu');
 const UserInterface = document.querySelector('.UserInterface');
 function HideStartgameMenu(){
 InitialMenu.style.display = 'none';
-UserInterface.style.display = 'block';
+UserInterface.style.display = 'flex';
 }
 StartGame.addEventListener('click', HideStartgameMenu);
 
