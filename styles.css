@@ -60,8 +60,86 @@ body{
     padding: 20px;    
     width: 20vh;
     transition: background-color 0.3s;
+    cursor: pointer;
 }
 #start-game:hover {
     background-color: hsl(235, 71%, 50%);
     opacity: 30%;
+}
+
+.TheActualGameMenu{
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 15vh;
+}
+.PlayerMenu {
+    display: block;
+    margin-right: 5vh;
+    height: 50vh;
+}
+
+.PlayerChoices {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2vh;
+}
+
+.PlayerChoices img {
+    margin-right: 1vh;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border: 1px solid #ccc;
+}
+
+.BotChoices {
+    display: flex;
+}
+
+.BotChoices img {
+    margin-right: 1vh;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border: 1px solid #ccc;
+}
+
+.BotMenu {
+    text-align: end;
+    width: 50%;
+    height: 70vh;
+    margin-left: 5vh;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    list-style-type: none;
+}
+.Attributes{
+    width: 100%;
+    max-width: 45vh;
+    margin: 0 auto;
+
+}
+ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px -5px;
+    justify-content: space-between;
+}
+li {
+    flex-basis: 50%;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+.PlayerImage img,
+.BotImage img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
 }
