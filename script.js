@@ -8,6 +8,8 @@ const TheActualGameMenu = document.querySelector('.TheActualGameMenu');
 const Playerrock = document.querySelector('.ButtonRock');
 const Playerpaper = document.querySelector('.ButtonPaper');
 const Playerscissors = document.querySelector('.ButtonScissors');
+let ActualPlayerPoints = document.querySelector('.ActualPlayerPoints');
+let ActualBotPoints = document.querySelector('.ActualBotPoints')
 function HideStartGameMenu(){
 InitialMenu.style.display = 'none';
 TheActualGameMenu.style.display = 'none';
@@ -18,34 +20,35 @@ function HideNavGameMenu(){
     playmenu.style.display = 'none';
     TheActualGameMenu.style.display = "flex";
 }
-play.addEventListener('click' , HideNavGameMenu);
-
+play.addEventListener('click', () => {
+    HideNavGameMenu();
+    ResetGame();
+  });
+  let roundCount = 0;
 let PlayerChoiceValue = '';
 function PlayerChoice(choice){
     console.log('Player chose:', choice);
     PlayerChoiceValue = choice;
     BotChoice = botchoice();
     console.log('Bot chose:', BotChoice);
-
     let playerPickImage = document.getElementById('PlayerPickImage');
     let botPickImage = document.getElementById('BotPickImage');
 
     playerPickImage.src = choice.toLowerCase() + ".jpg.png";
     botPickImage.src = BotChoice.toLowerCase() + ".jpg.png";
     
+    RoundChecker();
+    GameRules();
 }
 Playerrock.addEventListener('click', ()=>{
 PlayerChoice("Rock");
-GameRules();
 
 })
 Playerpaper.addEventListener('click', ()=>{
     PlayerChoice("Paper");
-    GameRules();
 });
 Playerscissors.addEventListener('click', () =>{
 PlayerChoice("Scissors");
-GameRules();
 
 })
 let BotChoice = '';
@@ -60,15 +63,17 @@ function botchoice(){
     }
     return BotChoice;
 }
-let roundCount = 1;
 let PlayerScore = 0;
 let BotScore = 0;
+let result = '';
 function GameRules(){
     RoundChecker(roundCount);
     if(PlayerChoiceValue === BotChoice){
-        let result = "It is a tie!";
+        result = "It is a tie!";
         PlayerScore++;
         BotScore++;
+        ActualPlayerPoints.textContent = `Your actual points:  ${PlayerScore}`;
+        ActualBotPoints.textContent = `Your actual points:  ${BotScore}`;
         console.log(result);
         notification(result);
     }else if(
@@ -77,22 +82,23 @@ function GameRules(){
         (PlayerChoiceValue === "Scissors" && BotChoice === "Paper")
     ){
         PlayerScore++;
+        ActualPlayerPoints.textContent = `Your actual points:  ${PlayerScore}`;
         result = "You've won this one, congratulations!";
         console.log(result);
         notification(result);
     }else{
         BotScore++;
         result = "Unfortunatly, it seems that bot have beaten your ass...";
+        ActualBotPoints.textContent = `Your actual points:  ${BotScore}`;
         console.log(result);
         notification(result);
     }
-    if (roundCount === 3){  
+    if (roundCount === 3) {
+        roundtext.textContent = "3/3";
         GlobalNotification();
-        ResetGame(PlayerChoiceValue,BotChoice);
+        ResetGame();
     }else{
         roundCount++;
-        PlayerChoiceValue = null;
-        BotChoice = null;
     }
 }
 function notification(result){
@@ -110,27 +116,27 @@ function GlobalNotification(){
         }
         alert(HaveYouWonAlert); 
     }
-    let roundtext = '';
-function RoundChecker(roundCount){
-    const roundtext = document.querySelector('.RoundCounter-Text');
-    if(roundCount===1){
-        roundtext.textContent = "1/3";
-    }else if(roundCount===2){
-        roundtext.textContent = "2/3";
-    }else{
-        roundtext.textContent = "3/3";
-    }
-}
-function ResetGame(PlayerChoiceValue,BotChoice){
-        roundCount = 1;
+    //tujestroundcount
+    function RoundChecker() {
+        const roundtext = document.querySelector('.RoundCounter-Text');
+        if (roundCount === 0) {
+          roundtext.textContent = "Game has not started";
+        } else if (roundCount < 3) {
+            roundtext.textContent = `${roundCount}/3`;
+          } else {
+            roundtext.textContent = "3/3";
+            GlobalNotification();
+            ResetGame();
+          }
+      }
+      function ResetGame() {
+        roundCount = 0;
         PlayerScore = 0;
         BotScore = 0;
-        PlayerChoiceValue = null;
-        BotChoice = null;
-        RoundChecker(roundCount);
-}
-
-
+        PlayerChoiceValue = '1';
+        BotChoice = '0';
+        RoundChecker();
+      }
 
 
 });
