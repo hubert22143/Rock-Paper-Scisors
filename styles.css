@@ -13,11 +13,18 @@ body {
     color: #fafafa;
     height: 100vh;
 }
-
+.LastAnimeGifs{
+    display: flex;
+}
 .InitialMenu {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.TextOnInitialMenu{
+    display: flex;
+    justify-content: center;
 }
 
 .Game {
@@ -40,11 +47,8 @@ body {
     position: absolute;
     top: 0;
     display: flex;
-    align-self: center;
-    margin-top: 5vh;
-    margin-right: 5px;
-    text-align: center;
-    margin: 25px;
+    justify-content: center;
+    align-items: center;
 }
 
 .StartGameBox {
@@ -57,7 +61,7 @@ body {
     background-color: #1b1c22;
 }
 
-#start-game {
+#start-game,.play,.AnimeMode,.ButtonBotRock,.ButtonBotPaper,.ButtonBotScissors,.ButtonRock,.ButtonPaper,.ButtonScissors {
     background-color: #2534da;
     list-style: none;
     text-decoration: none;
@@ -68,10 +72,36 @@ body {
     transition: background-color 0.3s;
     cursor: pointer;
 }
-
-#start-game:hover {
+#start-game:hover,
+.play:hover,
+.AnimeMode:hover {
     background-color: hsl(235, 71%, 50%);
     opacity: 30%;
+}
+.NavGameMenu{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.PlayVsBot{
+    display: flex;
+    justify-content: center;
+}
+.InputPlayerName{
+    display: flex;
+    flex-direction: column;
+}
+.AnimeHolder{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.NavGameButtons{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-content: center;
 }
 
 .TheActualGameMenu {
@@ -91,9 +121,7 @@ body {
     justify-content: flex-start;
     margin-top: 2vh;
 }
-
 .PlayerChoices img {
-    margin-right: 1vh;
     width: 100px;
     height: 100px;
     object-fit: contain;
@@ -200,4 +228,30 @@ li {
 #BotPickImage{
     width: 150px;
     height: 150px;
+}
+.gif1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 150px;
+}
+.gif2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 150px;
+    width: 150px;
+}
+.gif3{
+    position: absolute;
+    bottom: 0;
+    height: 150px;
+    width: 150px;
+    margin-right: 25px;
+}
+.gif4{
+    position: absolute;
+    height: 150px;
+    width: 150px;
 }

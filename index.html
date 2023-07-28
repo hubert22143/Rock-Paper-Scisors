@@ -10,7 +10,14 @@
     <div class="Game">
         <div class="InitialMenu">
             <div class="WelcomingText">
-                <h1>Welcome to Rock-Paper-Scissors game!</h1>
+                <div class="TextOnInitialMenu"><h1>Welcome to Rock-Paper-Scissors game!</h1></div>
+            </div>
+            <div class="InputPlayerName">
+                <div class="InputPlayerText">
+                    <h1>Hello player! Before entering the game, you must enter your Player Name!</h1>
+                    <input type="text" id="player-name-input" placeholder="Player, enter your name">
+                    <button id="Submit-Player-Name">Submit</button> 
+                </div>
             </div>
             <div class="StartGameBox">
                 <div class="text">
@@ -22,6 +29,20 @@
             </div>
         </div>
         <div class="UserInterface" style="display: none;">
+            <div class="gif1">
+                <img src="rainbow-pls.gif" class="gif1" id="anime1" style="display: none;">
+            </div>
+            <div class="gif2">
+                <img src="rainbow-pls.gif" class="gif2" id="anime2" style="display: none;">    
+            </div>
+            <div class="LastAnimeGifs">
+            <div class="gif3">
+                <img src="rainbow-pls.gif" class="gif3" id="anime3" style="display: none;">
+            </div>
+            <div class="gif4">
+                <img src="rainbow-pls.gif" class="gif4" id="anime4" style="display: none;">
+            </div>
+        </div>
             <div class="NavGameMenu">
                 <div class="NavGameText">
                     <h3>Welcome user! Feel free to start the game whenever you would like to!</h3>
@@ -30,8 +51,11 @@
                     <div class="PlayVsBot">
                         <button class="play">Play vs Bot</button>
                     </div>
-                    <div class="Music">
-                        <button id="Music">Music</button>
+                    <div class="AnimeHolder">
+                        <button class="AnimeMode">Anime Mode</button>
+                        <audio class="animethememusic" >
+                            <source src="anima-main-7426.mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
@@ -42,9 +66,9 @@
             </div>
             <div class="PlayerMenu">
                 <div class="PlayerImage">
-                    <img src="gigachad.jpg.png">
+                    <img src="gigachad.jpg.png" id="PlayerImage">
                     <div class="PlayerName">
-                        Hello PlayerName, its you!
+                        <p class="PlayerNameText"></p>
                         <p class="ActualPlayerPoints">Your Actual Points: </p>
                     </div>
                 </div>
@@ -94,7 +118,7 @@
         </div>
             <div class="BotMenu">
                 <div class="BotImage">
-                    <img src="botimage.png">
+                    <img src="botimage.png" id="BotAnimeImage">
                     <div class="BotName">
                         This is your opponent!
                         <p class="ActualBotPoints">Bot Actual Points: </p>

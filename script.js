@@ -8,13 +8,20 @@ const TheActualGameMenu = document.querySelector('.TheActualGameMenu');
 const Playerrock = document.querySelector('.ButtonRock');
 const Playerpaper = document.querySelector('.ButtonPaper');
 const Playerscissors = document.querySelector('.ButtonScissors');
+const AnimeMode = document.querySelector('.AnimeMode');
 let ActualPlayerPoints = document.querySelector('.ActualPlayerPoints');
 let ActualBotPoints = document.querySelector('.ActualBotPoints')
+let anime1 = document.getElementById('anime1');
+let anime2 = document.getElementById('anime2');
+let anime3 = document.getElementById('anime3');
+let anime4 = document.getElementById('anime4');
+let PlayerNameText = document.querySelector('.PlayerNameText');
 function HideStartGameMenu(){
 InitialMenu.style.display = 'none';
 TheActualGameMenu.style.display = 'none';
 UserInterface.style.display = 'flex';
 }
+StartGame.disabled = true;
 StartGame.addEventListener('click', HideStartGameMenu);
 function HideNavGameMenu(){
     playmenu.style.display = 'none';
@@ -137,6 +144,33 @@ function GlobalNotification(){
         BotChoice = '0';
         RoundChecker();
       }
+      const animethememusic = document.querySelector('.animethememusic')
+      let PlayerImage = document.getElementById('PlayerImage');
+      let BotImage = document.getElementById('BotAnimeImage');
+      AnimeMode.addEventListener('click', () => {
+        anime1.style.display = "flex";
+        anime2.style.display = "flex";
+        anime3.style.display = "flex";
+        anime4.style.display = "flex";
+        animethememusic.play();
+        PlayerImage.src = 'secondimage.jpg';
+        BotImage.src = 'botchangedpicture.jpg';
+      })
 
+      const PlayerName = document.getElementById('player-name-input');
+      const SubmitName = document.getElementById('Submit-Player-Name');
+      SubmitName.addEventListener('click', () => {
+        let playerName = PlayerName.value.trim();
+        if (playerName !== '') {
+            ActualPlayerName = playerName;
+            StartGame.disabled = false;
+            PlayerNameText.textContent = `Hello ${playerName} Enjoy!`
+
+        } else {
+            alert("Please enter your name before playing.");
+            StartGame.disabled = true;
+        }
+
+      });
 
 });
