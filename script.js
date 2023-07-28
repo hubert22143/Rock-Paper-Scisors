@@ -20,34 +20,64 @@ function HideNavGameMenu(){
 }
 play.addEventListener('click' , HideNavGameMenu);
 
-
+let PlayerChoiceValue = '';
 function PlayerChoice(choice){
     console.log('Player chose:', choice);
-    const botChoice = BotChoice();
-    console.log('Bot chose:', botChoice);
+    PlayerChoiceValue = choice;
+    BotChoice = botchoice();
+    console.log('Bot chose:', BotChoice);
+    
 }
 Playerrock.addEventListener('click', ()=>{
-PlayerChoice("rock");
+PlayerChoice("Rock");
+GameRules();
 
 })
 Playerpaper.addEventListener('click', ()=>{
-    PlayerChoice("paper");
+    PlayerChoice("Paper");
+    GameRules();
 });
 Playerscissors.addEventListener('click', () =>{
-PlayerChoice("scissors");
+PlayerChoice("Scissors");
+GameRules();
 
 })
-function BotChoice(){
+let BotChoice = '';
+function botchoice(){
     const randomValue = Math.floor(Math.random() * 3) + 1;
-    let botchoice;
     if(randomValue===1){
-        botchoice="Rock";
+        BotChoice="Rock";
     }else if(randomValue===2){
-        botchoice="Paper";
+        BotChoice="Paper";
     }else{
-        botchoice="Scissors";
+        BotChoice="Scissors";
     }
-    return botchoice;
+    return BotChoice;
+}
+function GameRules(){
+    const resulttext = document.querySelector('.result-text')
+
+    if(PlayerChoiceValue === BotChoice){
+        let result = "It is a tie!";
+        console.log(result);
+        notification(result);
+    }else if(
+        (PlayerChoiceValue === "Rock" && BotChoice === "Scissors") ||
+        (PlayerChoiceValue === "Paper" && BotChoice === "Rock") ||
+        (PlayerChoiceValue === "Scissors" && BotChoice === "Paper")
+    ){
+        result = "You've won this one, congratulations!";
+        console.log(result);
+        notification(result);
+    }else{
+        result = "Unfortunatly, it seems that bot have beaten your ass...";
+        console.log(result);
+        notification(result);
+    }
+}
+function notification(result){
+    const resulttext = document.querySelector('.result-text');
+    resulttext.textContent=result;
 }
 
 

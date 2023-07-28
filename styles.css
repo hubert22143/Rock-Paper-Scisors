@@ -1,24 +1,27 @@
-html,body{
+html,
+body {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style-type: none;
-
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
     background: #050505;
     color: #fafafa;
     height: 100vh;
 }
-.InitialMenu{
+
+.InitialMenu {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.Game{
-    background-color:#000000;
+
+.Game {
+    background-color: #000000;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -29,8 +32,9 @@ body{
     justify-content: center;
     align-items: center;
 }
-.WelcomingText{
-    width: 100vh
+
+.WelcomingText {
+    width: 100vh; /* Missing semicolon */
     height: 15vh;
     background-color: #886d71;
     position: absolute;
@@ -42,37 +46,40 @@ body{
     text-align: center;
     margin: 25px;
 }
-.StartGameBox{
+
+.StartGameBox {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width:  400px;
+    width: 400px;
     height: 400px;
     background-color: #1b1c22;
 }
-#start-game{
+
+#start-game {
     background-color: #2534da;
     list-style: none;
     text-decoration: none;
     border: none;
     border-radius: 1vh;
-    padding: 20px;    
+    padding: 20px;
     width: 20vh;
     transition: background-color 0.3s;
     cursor: pointer;
 }
+
 #start-game:hover {
     background-color: hsl(235, 71%, 50%);
     opacity: 30%;
 }
 
-.TheActualGameMenu{
+.TheActualGameMenu {
     display: flex;
-    justify-content: space-between;
     flex-grow: 1;
     padding: 15vh;
 }
+
 .PlayerMenu {
     display: block;
     margin-right: 5vh;
@@ -95,6 +102,7 @@ body{
 
 .BotChoices {
     display: flex;
+    justify-content: flex-end;
 }
 
 .BotChoices img {
@@ -111,35 +119,56 @@ body{
     height: 70vh;
     margin-left: 5vh;
 }
-ul,li{
+
+ul,
+li {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style: none;
     list-style-type: none;
 }
-.Attributes{
+
+.Attributes {
     width: 100%;
     max-width: 45vh;
     margin: 0 auto;
-
 }
-ul{
+.BotAttributes{
+    margin-left: 150px;
+}
+
+ul {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin: 15px -5px;
     justify-content: space-between;
 }
+
 li {
     flex-basis: 50%;
     border: 1px solid #ccc;
     padding: 5px 10px;
     box-sizing: border-box;
 }
+
 .PlayerImage img,
 .BotImage img {
     width: 150px;
     height: 150px;
     margin-bottom: 10px;
+}
+.notification-container{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+}
+.RoundCounter{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
