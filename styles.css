@@ -41,7 +41,7 @@ body {
 }
 
 .WelcomingText {
-    width: 100vh; /* Missing semicolon */
+    width: 100vh;
     height: 15vh;
     background-color: #886d71;
     position: absolute;
