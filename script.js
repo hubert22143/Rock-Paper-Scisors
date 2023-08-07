@@ -165,6 +165,8 @@ function GlobalNotification(){
             ActualPlayerName = playerName;
             StartGame.disabled = false;
             PlayerNameText.textContent = `Hello ${playerName} Enjoy!`
+            const WelcomeUser = document.getElementById('WelcomeUser');
+             WelcomeUser.textContent = `Welcome ${playerName}, I hope you enjoy your stay!`;
 
         } else {
             alert("Please enter your name before playing.");
@@ -172,5 +174,6 @@ function GlobalNotification(){
         }
 
       });
+
 
 });

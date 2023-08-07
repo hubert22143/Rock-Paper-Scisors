@@ -107,37 +107,36 @@ align-content: center;
 .TheActualGameMenu {
     display: flex;
     flex-grow: 1;
-    padding: 15vh;
 }
 
 .PlayerMenu {
     display: block;
-    margin-right: 5vh;
-    height: 50vh;
 }
 
 .PlayerChoices {
     display: flex;
-    justify-content: flex-start;
     margin-top: 2vh;
+    height: 100px;
+    width: 100px;
 }
 .PlayerChoices img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
+    width: 75px;
+    height: 75px;
+    object-fit: fill;
     border: 1px solid #ccc;
 }
 
 .BotChoices {
+    visibility: hidden;
     display: flex;
     justify-content: flex-end;
 }
 
+
 .BotChoices img {
-    margin-right: 1vh;
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
+    width: 75px;
+    height: 75px;
+    object-fit: fill;
     border: 1px solid #ccc;
 }
 
@@ -246,12 +245,14 @@ li {
 .gif3{
     position: absolute;
     bottom: 0;
+    left: 0;
     height: 150px;
     width: 150px;
-    margin-right: 25px;
 }
 .gif4{
     position: absolute;
     height: 150px;
     width: 150px;
+    bottom: 0;
+    right: 0;
 }
