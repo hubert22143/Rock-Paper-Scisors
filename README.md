@@ -15,3 +15,7 @@ And many things related to logical structure of the game(RoundChecker,ResetGame)
 
 Mainly I learned how to think what to focus on about when you're creating game.
 Overall, usefull exercise, learned alot, feeling more comfortable with js.
+
+
+// some fixes - last update
+The thing what I have fixed in the last commit, was styling. I have updated the anime mode, so it shows correctly in the corners while in the game instead of ruining the graphics. Also i've hided bot ui menu, since it's unecessary, after that, some minor fixes not worth mentioning.
