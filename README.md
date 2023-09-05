@@ -19,3 +19,5 @@ Overall, usefull exercise, learned alot, feeling more comfortable with js.
 
 // some fixes - last update
 The thing what I have fixed in the last commit, was styling. I have updated the anime mode, so it shows correctly in the corners while in the game instead of ruining the graphics. Also i've hided bot ui menu, since it's unecessary, after that, some minor fixes not worth mentioning.
+
+You can preview the site there: https://hubert22143.github.io/Rock-Paper-Scisors/
